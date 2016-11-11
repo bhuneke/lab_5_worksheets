@@ -58,7 +58,10 @@ testMultiply(5,9);
 
 /////////////////////////////////////
 /* Problem 3
-Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
+Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns
+//an array where the first element is the sum of those three numbers, the second element is the product
+//of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this
+//example and use the values that were input into the function:
 
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
@@ -68,12 +71,31 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
+console.log('PROBLEM 3');
 
+function sumAndMultiply(a,b,c){ //eslint-disable-line
+  var sumOfAAndB = sum(a, b);
+  var sumOfAll = sum(sumOfAAndB[0], c);
+  var productOfAAndB = multiply(a, b);
+  var productOfAll = multiply(productOfAAndB[0], c);
+  var stringSum = (a + ' and ' + b + ' and ' + c + ' sum to ' + sumOfAll[0] + '.');
+  var stringProduct = ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productOfAll[0] + '.');
+  var testProblemThree = [sumOfAll[0], productOfAll[0], stringSum, stringProduct];
+  console.log('something' + sumOfAAndB[0]);
+  console.log(sumOfAAndB[0]);
+  console.log('The value of a is: ' + a);
+  console.log('The value of b is: ' + b);
+  console.log('The value of c is: ' + c);
+  console.log('The sum of a and b and c is: ' + sumOfAll[0]);
+  console.log(productOfAll[0]);
+  console.log('The product of a and b and c is: ' + productOfAll[0]);
+  console.log('Sum line in array is: ' + ('4 and 7 and 5 sum to 16.' === stringSum));
+  console.log('Product line in array is: ' + ('The product of 4 and 7 and 5 is 140.' === stringProduct));
+  return testProblemThree;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
