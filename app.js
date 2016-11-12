@@ -139,11 +139,24 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(testArray){ //eslint-disable-line
 
+function multiplyArray(testArray){ //eslint-disable-line
+  var total = 1;
+  console.log('A: ' + testArray[0]);
+  console.log('B: ' + testArray[1]);
+  console.log('C: ' + testArray[2]);
+  for (var i = 0; i < testArray.length; i++){
+    total = multiply(total, testArray[i])[0];
+
+  }
+  console.log('Total: ' + total);
+  var string = ('The numbers ' + testArray + ' have a product of ' + total + '.');
+  console.log('The strings are equal: ' + (string === 'The numbers 2,3,4 have a product of 24.'));
+  console.log([total, string]);
+  return [total, string];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
